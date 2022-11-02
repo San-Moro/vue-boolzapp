@@ -219,28 +219,31 @@ h3 {
     width: 80%;
     height: 100%;
     margin: 0 auto;
-    padding-top: 30px;
-    position: relative;
-    /* DEBUG */
-    border: 1px solid black;
+    padding-top: 50px;
 }
 
 .user-message,
 .answer-message {
-    width: 250px;
-    height: 60px;
+    width: 300px;
+    max-width: 450px;
+    min-height: 50px;
     border-radius: 8px;
-    position: absolute;
-    display: block;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.row-user-message {
+    align-items: flex-end;
+    flex-direction: column;
 }
 
 .user-message {
     background-color: var(--mess-sent-user);
-    right: 0;
 }
+
 .answer-message {
     background-color: white;
-    left: 0;
 }
 
 /* Footer-current-chat */
