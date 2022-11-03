@@ -208,45 +208,45 @@ h3 {
 
 /* Main-current-chat */
 
-.main-current-chat {
-    width: 100%;
-    height: calc(100%  - (var(--header-footer-height) * 2));
-    background-image: url("../img/mine.jpg");
-    background-position: center;
-    background-repeat: repeat;
-    /* DEBUG */
-    background-color: #dcd4cd;
-}
-
 .container-main-chat {
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
+    height: calc(100%  - (var(--header-footer-height) * 2));
+    width: 100%;
+    background-image: url("../img/mine.jpg");
     padding-top: 50px;
 }
 
-.user-message,
-.answer-message {
-    width: 300px;
-    max-width: 450px;
-    min-height: 50px;
-    border-radius: 8px;
-    align-items: center;
-    padding: 15px;
-    margin-bottom: 15px;
+.message {
+    display: flex;
+    padding: 10px 50px;
 }
 
-.row-user-message {
-    align-items: flex-end;
-    flex-direction: column;
+.message-sent {
+    justify-content: flex-end;
 }
 
-.user-message {
+.message-received {
+    justify-content: flex-start;
+}
+
+.message-box {
+    background-color: white;
+    min-width: 250px;
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.message-sent .message-box {
     background-color: var(--mess-sent-user);
 }
 
-.answer-message {
+.message-recieved .message-box {
     background-color: white;
+}
+
+.message-time {
+    text-align: right;
+    font-size: 12px;
 }
 
 /* Footer-current-chat */

@@ -91,24 +91,24 @@
                         </div>
                     </div>
                     <!-- main of conversation -->
-                    <div class="main-current-chat">
-                        <div class="container-main-chat ">
-                            <div class="row-user-message d-flex">
-                                <div class="user-message d-flex" v-for="(chat,index) in contacts.messages">
-                                    <p>{{chat[currentChat].messages.message}}</p>
+
+                    <div class="container-main-chat ">
+                        <div class="message" 
+                            v-for="(chat,index) in contacts[currentChat].messages"
+                            :class="messages.status === 'sent' ?  : ''">
+                            <div class="message-box">
+                                <div class="message-content">
+                                    <p>{{ chat.message }}</p>
+                                    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quam, sunt dolorum itaque id placeat, neque, natus nostrum sapiente rem ipsa voluptates est quibusdam dolor hic quisquam doloribus modi ullam? -->
                                 </div>
-                                <!-- <div class="user-message d-flex">
-                                    <p>Ricordati di stendere i panni.</p>
-                                </div> -->
+                                <div class="message-time">
+                                    <small> 12:00 </small>
+                                </div>
                             </div>
-                            <!-- <div class="row-answer-message">
-                                <div class="answer-message d-flex">
-                                    <p>Tutto fatto!</p>
-                                </div>
-                                
-                            </div> -->
                         </div>
+
                     </div>
+
                     <!-- input: send a message -->
                     <div class="footer-current-chat d-flex">
                         <span type="submit"><i class="fa-regular fa-face-smile"></i></span>
