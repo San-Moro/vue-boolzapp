@@ -25,7 +25,7 @@
             <div class="main-container d-flex">
                 <!-- LEFT SECTION -->
                 <!-- Sidebar di sinistra con tutte le chat -->
-                <div class="sidebar">
+                <div class="sidebar d-flex">
                     <!-- user -->
                     <div class="user d-flex">
                         <div class="profile d-flex">
@@ -57,21 +57,21 @@
                     <!-- chats -->
                     <div class="chats-container">
                         <!-- chat-list -->
-                        <div class="chat-item d-flex active ">
+                        <div class="chat-item d-flex" v-for="contact in contacts">
                             <div class="profile d-flex">
-                                <img src="img/avatar_1.jpg" alt="">
-                                <h2>Michele</h2>
+                                <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
+                                <h2>{{contact.name}}</h2>
                             </div>
                         </div>
-                        <div class="chat-item d-flex">
+                        <!-- <div class="chat-item d-flex">
                             <div class="profile d-flex">
                                 <img src="img/avatar_2.jpg" alt="">
                                 <h2>Fabio</h2>
                             </div>
-                        </div>
+                        </div> -->
+                        <!-- <div class="chat-item"></div>
                         <div class="chat-item"></div>
-                        <div class="chat-item"></div>
-                        <div class="chat-item"></div>
+                        <div class="chat-item"></div> -->
                     </div>
                 </div>
 

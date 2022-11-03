@@ -82,6 +82,7 @@ h3 {
     width: var(--sidebar-width) ;
     height: 100%;
     background-color: white;
+    flex-direction: column;
 }
 
 /* User */
@@ -138,6 +139,7 @@ h3 {
 /* Input search chat */
 .container-input-search {
     justify-content: center;
+    background-color: #fafafa;
 }
 .search-chat {
     background: white;
@@ -174,13 +176,15 @@ h3 {
 /* Chats */
 .chats-container {
     width: var(--sidebar-width);
+    flex-grow: 1;
+    overflow-y: scroll;
+    background-color: white;
 }
 
 .chat-item {
     width: 100%;
     height: 100px;
-    /* DEBUG */
-    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
 }
 
 .active {
@@ -207,7 +211,7 @@ h3 {
 .main-current-chat {
     width: 100%;
     height: calc(100%  - (var(--header-footer-height) * 2));
-    background-image: url("/img/mine.jpg");
+    background-image: url("../img/mine.jpg");
     background-position: center;
     background-repeat: repeat;
     background-size: contain;
