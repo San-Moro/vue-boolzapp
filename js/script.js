@@ -177,6 +177,9 @@ createApp({
         
     },
     methods: {
+        changeContact(index) {
+            this.currentChat = index;
+        }
         
     },
 }).mount("#app");

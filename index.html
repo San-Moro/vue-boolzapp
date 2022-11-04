@@ -57,7 +57,10 @@
                     <!-- chats -->
                     <div class="chats-container">
                         <!-- chat-list -->
-                        <div class="chat-item d-flex" v-for="contact in contacts">
+                        <div 
+                            class="chat-item d-flex" 
+                            v-for="(contact, index) in contacts"
+                            @click="changeContact(index)">
                             <div class="profile d-flex">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                                 <h2>{{contact.name}}</h2>
@@ -95,14 +98,14 @@
                     <div class="container-main-chat ">
                         <div class="message" 
                             v-for="(chat,index) in contacts[currentChat].messages"
-                            :class="messages.status === 'sent' ?  : ''">
+                            :class="chat.status === 'sent' ? 'message-sent' : 'message-received'">
                             <div class="message-box">
                                 <div class="message-content">
                                     <p>{{ chat.message }}</p>
                                     <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque quam, sunt dolorum itaque id placeat, neque, natus nostrum sapiente rem ipsa voluptates est quibusdam dolor hic quisquam doloribus modi ullam? -->
                                 </div>
                                 <div class="message-time">
-                                    <small> 12:00 </small>
+                                    <small> {{chat.date}} </small>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +115,8 @@
                     <!-- input: send a message -->
                     <div class="footer-current-chat d-flex">
                         <span type="submit"><i class="fa-regular fa-face-smile"></i></span>
-                        <input type="text" id="send-mess" placeholder="Scrivi un messaggio">
+                        <input type="text" id="send-mess" placeholder="Scrivi un messaggio"
+                            @keyup.enter="">
                         <span type="submit"><i class="fa-solid fa-microphone"></i></span>
                     </div>
                 </div> 
