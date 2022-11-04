@@ -116,7 +116,8 @@
                     <div class="footer-current-chat d-flex">
                         <span type="submit"><i class="fa-regular fa-face-smile"></i></span>
                         <input type="text" id="send-mess" placeholder="Scrivi un messaggio"
-                            @keyup.enter="">
+                            v-model.trim="newMessage"
+                            @keyup.enter="AddNewMessage">
                         <span type="submit"><i class="fa-solid fa-microphone"></i></span>
                     </div>
                 </div> 

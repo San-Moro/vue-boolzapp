@@ -7,6 +7,7 @@ createApp({
     data() {
         return {
             currentChat: 0,
+            newMessage: "",
             contacts: [
                 {
                     name: 'Michele',
@@ -179,8 +180,45 @@ createApp({
     methods: {
         changeContact(index) {
             this.currentChat = index;
-        }
+        },
+
+        AddNewMessage() {
+            //aggiunge il messaggio SE l'input non è vuoto
+            if(this.newMessage != "") {
+                // accede ai messaggi del contatto corrente
+                this.contacts[this.currentChat].messages;
+                // crea un nuovo oggetto messaggio
+                newMessageObj = {
+                    date: '',
+                    message: this.newMessage,
+                    status: 'sent'
+                };
+                // puscha questo oggetto nell'array messages
+                this.contacts[this.currentChat].messages.push(newMessageObj);
+                // Svuota l'input
+                this.newMessage="";
+
+                // mostra messaggio risposta dopo 1 sec
+                setTimeout(this.answer,1000) ;
+            }
+            
+        },
         
+        //Set Timeout Answer
+        answer() {
+            // crea un nuovo oggetto messaggio di risposta
+            const newMessageAnswer = {
+                date: '',
+                message: "ok",
+                status: "received",
+            };
+
+            // accede ai messaggi del contatto corrente
+            this.contacts[this.currentChat].messages;
+            // puscha questo oggetto nell'array messages
+            this.contacts[this.currentChat].messages.push(newMessageAnswer);
+            
+        }
     },
 }).mount("#app");
 
